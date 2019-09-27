@@ -1922,7 +1922,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     addPost: function addPost() {
-      console.log(this.post);
+      var _this = this;
+
+      var uri = 'http://localhost:8000/api/post/create';
+      this.axios.post(uri, this.post).then(function (response) {
+        _this.$router.push({
+          name: 'posts'
+        });
+      });
     }
   }
 });
