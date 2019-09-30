@@ -23,7 +23,7 @@ class PostController extends Controller
 
   public function index()
   {
-    return new PostController(Post::all());
+    return new PostCollection(Post::all());
   }
 
   public function edit($id)
@@ -49,5 +49,4 @@ class PostController extends Controller
 
     return response()->json('successfully deleted');
   }
-
 }
